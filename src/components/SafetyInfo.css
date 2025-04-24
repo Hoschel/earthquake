@@ -1,0 +1,67 @@
+.safety-info-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1500; /* Above map, below whistle */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.safety-info-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  color: #333; /* Dark text for readability */
+}
+
+.safety-info-content h2 {
+  margin-top: 0;
+  color: #d32f2f; /* Red heading */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.safety-info-content ul {
+  list-style: none; /* Remove default bullets */
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.safety-info-content li {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.safety-info-content strong {
+  color: #555;
+  display: block; /* Put title on its own line */
+  margin-bottom: 3px;
+}
+
+.close-safety-button {
+  display: block;
+  margin: 20px auto 0 auto; /* Center the button */
+  padding: 12px 25px;
+  font-size: 1rem;
+  background-color: #d32f2f; /* Red background */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.close-safety-button:hover {
+  background-color: #b71c1c; /* Darker red on hover */
+}

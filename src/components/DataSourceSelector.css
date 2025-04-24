@@ -1,0 +1,38 @@
+.data-source-selector {
+  flex-direction: column; /* Stack label and buttons */
+  align-items: flex-start; /* Align items to the start */
+}
+
+.source-buttons {
+  display: flex;
+  flex-wrap: wrap; /* Allow buttons to wrap */
+  gap: 8px; /* Space between buttons */
+  margin-top: 8px; /* Space between label and buttons */
+}
+
+.source-buttons button {
+  padding: 0.5em 1em;
+  font-size: 0.9em;
+  /* Inherits general button styles from App.css */
+}
+
+.source-buttons button.active {
+  background-color: var(--link-color); /* Highlight active button */
+  color: white;
+  border-color: var(--link-color);
+}
+
+.source-buttons button.active:hover {
+  background-color: var(--link-hover-color);
+  border-color: var(--link-hover-color);
+}
+
+/* Responsive adjustments if needed */
+@media (max-width: 768px) {
+  .data-source-selector {
+    align-items: stretch; /* Make label full width */
+  }
+  .source-buttons {
+    justify-content: center; /* Center buttons when wrapped */
+  }
+}

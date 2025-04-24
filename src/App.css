@@ -1,0 +1,238 @@
+/* Light theme variables and related rules removed */
+
+/* Body styles removed - defined in index.css */
+
+.App {
+  max-width: 1280px;
+  margin: 20px auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+/* Header and Theme Toggle */
+.header-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+h1 {
+  font-size: 2em;
+  line-height: 1.1;
+  color: var(--text-color);
+  margin: 0;
+}
+
+/* Emergency Banner */
+.emergency-banner {
+  background-color: var(--emergency-banner-bg);
+  color: var(--emergency-banner-text);
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+/* Leaflet Map */
+.leaflet-container {
+  border-radius: 5px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 15px;
+}
+
+/* General Button Styles */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--button-bg);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: border-color 0.25s, background-color 0.3s ease, transform 0.1s ease;
+  margin: 5px;
+}
+button:hover {
+  border-color: var(--button-hover-border);
+}
+button:active {
+  transform: scale(0.98);
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.action-buttons {
+  margin-bottom: 20px;
+}
+
+/* Container for multiple filters */
+.filters-area {
+  display: flex;
+  flex-wrap: wrap; /* Allow filters to wrap on smaller screens */
+  gap: 15px; /* Space between filter components */
+  margin-bottom: 15px;
+}
+
+/* Ensure individual filter containers within the area don't have extra bottom margin */
+.filters-area > .filter-container {
+  margin-bottom: 0;
+  flex: 1; /* Allow filters to grow and share space */
+  min-width: 250px; /* Minimum width before wrapping */
+}
+
+/* Filter Controls */
+.filter-container {
+  background-color: var(--filter-bg);
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.filter-container label {
+  font-weight: bold;
+  color: var(--filter-text);
+  flex-shrink: 0;
+}
+
+/* Magnitude Filter Buttons Specific Styles */
+.magnitude-filter {
+  flex-direction: column; /* Stack label and buttons */
+  align-items: flex-start; /* Align items to the start */
+}
+
+.magnitude-buttons {
+  display: flex;
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+  gap: 8px; /* Space between buttons */
+  margin-top: 8px; /* Space between label and buttons */
+}
+
+.magnitude-buttons button {
+  padding: 0.5em 1em;
+  font-size: 0.9em;
+  /* Use default button styles from above */
+}
+
+.magnitude-buttons button.active {
+  background-color: var(--link-color); /* Highlight active button */
+  color: white;
+  border-color: var(--link-color);
+}
+
+.magnitude-buttons button.active:hover {
+  background-color: var(--link-hover-color);
+  border-color: var(--link-hover-color);
+}
+
+/* Earthquake List */
+.earthquake-list-container {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.earthquake-list-container h2 {
+  color: var(--text-color);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.earthquake-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 300px; /* Limit height and add scroll */
+  overflow-y: auto;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  background-color: var(--background-color); /* Ensure list bg matches theme */
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.earthquake-list-item {
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.2s ease, border-color 0.3s ease;
+}
+
+.earthquake-list-item:last-child {
+  border-bottom: none;
+}
+
+.earthquake-list-item:hover {
+  background-color: var(--list-item-hover);
+}
+
+.earthquake-list-item strong {
+  color: var(--text-color);
+  display: block;
+  margin-bottom: 3px;
+}
+
+.earthquake-list-item span {
+  font-size: 0.9em;
+  color: var(--secondary-text-color);
+  margin-right: 8px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .App {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  .header-controls {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .theme-toggle-button {
+    align-self: flex-end;
+  }
+
+  .filter-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-container label {
+    margin-bottom: 8px;
+  }
+
+  .magnitude-filter {
+    align-items: stretch; /* Make label full width */
+  }
+
+  .magnitude-buttons {
+    justify-content: center; /* Center buttons when wrapped */
+  }
+
+  .filters-area {
+    flex-direction: column; /* Stack filters vertically */
+    align-items: stretch; /* Make filters full width */
+  }
+}
+
+/* Remove original Vite styles if they are no longer needed */
+/* .logo { ... } */
+/* .card { ... } */
+/* .read-the-docs { ... } */
